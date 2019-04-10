@@ -65,7 +65,7 @@ class CarInterface(object):
     std_cargo = 136
 
     # TODO: Remove these when converting to chassisdata.py VIN detection
-    if candidate == CAR.GOLF
+    if candidate == CAR.GOLF:
       ret.mass = 1372 + std_cargo
       ret.wheelbase = 2.64
       ret.centerToFront = ret.wheelbase * 0.5
