@@ -51,7 +51,7 @@ class CarController(object):
     #
     if (frame % P.HCA_STEP_ACTIVE) == 0:
 
-      if enabled and not CS.standstill:
+      if enabled and not CS.standstill and not CS.left_blinker_on and not CS.right_blinker_on:
         # TODO: Verify our lkas_enabled DBC bit is correct, VCDS thinks it may not be
         lkas_enabled = 1
         plan_requested_torque = int(round(actuators.steer * P.STEER_MAX))
