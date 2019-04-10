@@ -65,9 +65,23 @@ class CarInterface(object):
     std_cargo = 136
 
     # TODO: Remove these when converting to chassisdata.py VIN detection
-    if candidate == CAR.GOLF or candidate == CAR.ATLAS:
+    if candidate == CAR.GOLF
       ret.mass = 1372 + std_cargo
       ret.wheelbase = 2.64
+      ret.centerToFront = ret.wheelbase * 0.5
+
+      ret.steerRatio = 14
+      ret.steerActuatorDelay = 0.05
+      ret.steerRateCost = 0.5
+      ret.steerKf = 0.00006
+      ret.steerKiBP, ret.steerKpBP = [[0.], [0.]] # m/s
+      ret.steerKpV, ret.steerKiV = [[0.50], [0.25]]
+      ret.steerMaxBP = [0.] # m/s
+      ret.steerMaxV = [1.]
+
+    if candidate == CAR.ATLAS:
+      ret.mass = 2042 + std_cargo
+      ret.wheelbase = 2.98
       ret.centerToFront = ret.wheelbase * 0.5
 
       ret.steerRatio = 14
