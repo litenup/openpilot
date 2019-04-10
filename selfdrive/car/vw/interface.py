@@ -92,6 +92,7 @@ class CarInterface(object):
       ret.steerKpV, ret.steerKiV = [[0.25], [0.125]]
       ret.steerMaxBP = [0.] # m/s
       ret.steerMaxV = [1.]
+      ret.minSteerSpeed = 2.5 # m/s
 
     if candidate == CAR.OCTAVIA:
       ret.mass = 1360 + std_cargo
