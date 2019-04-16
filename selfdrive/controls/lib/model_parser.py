@@ -43,9 +43,10 @@ class ModelParser(object):
                         (1 - self.lane_width_certainty) * speed_lane_width
 
       lane_width_diff = abs(self.lane_width - current_lane_width)
-      lane_r_prob = interp(lane_width_diff, [0.3, 1.0], [1.0, 0.0])
+      # Update to stick to right lane when lane widens (eg. hitting highway exit or left turn lane on city street)
+      lane_l_prob = interp(lane_width_diff, [0.3, 1.0], [1.0, 0.0])
 
-      r_prob *= lane_r_prob
+      l_prob *= lane_l_prob
 
       self.lead_dist = md.model.lead.dist
       self.lead_prob = md.model.lead.prob
