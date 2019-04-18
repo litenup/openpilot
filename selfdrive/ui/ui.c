@@ -2154,7 +2154,8 @@ static void ui_update(UIState *s) {
         polls[3].revents || polls[4].revents || polls[6].revents ||
         polls[7].revents || polls[10].revents) {
       // awake on any (old) activity
-      set_awake(s, true);
+      // commented out below to have screen black out after 30 seconds
+      // set_awake(s, true);
     }
 
     if(polls[9].revents) {
