@@ -60,7 +60,7 @@ class CarInterface(CarInterfaceBase):
       ret.steerLimitAlert = False
 
       # Additional common MQB parameters that may be overridden per-vehicle
-      ret.steerRateCost = 0.5
+      ret.steerRateCost = 1
       ret.steerActuatorDelay = 0.05 # Hopefully all MQB racks are similar here
       ret.steerMaxBP = [0.]  # m/s
       ret.steerMaxV = [1.]
@@ -80,8 +80,8 @@ class CarInterface(CarInterfaceBase):
       # averaged params should work reasonably on a range of cars. Owners
       # can tweak here, as needed, until we have car type auto-detection.
 
-      ret.mass = 1700 + STD_CARGO_KG
-      ret.wheelbase = 2.75
+      ret.mass = 2042 + STD_CARGO_KG
+      ret.wheelbase = 2.98
       ret.centerToFront = ret.wheelbase * 0.45
       ret.steerRatio = 15.6
       ret.lateralTuning.pid.kf = 0.00006
