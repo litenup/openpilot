@@ -47,7 +47,7 @@ class CarController():
 
       # FAULT AVOIDANCE: HCA must not be enabled at standstill. Also stop
       # commanding HCA if there's a fault, so the steering rack recovers.
-      if enabled and not (CS.standstill or CS.steeringFault) and not CS.left_blinker_on and not CS.right_blinker_on:
+      if enabled and not (CS.standstill or CS.steeringFault):
 
         # FAULT AVOIDANCE: Requested HCA torque must not exceed 3.0 Nm. This
         # is inherently handled by scaling to STEER_MAX. The rack doesn't seem
